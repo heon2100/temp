@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/app01.css">
+
+  <!--==================== ICONS =============================================-->
+  <link rel="apple-touch-icon" href="images/logo.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="images/logo.ico">
+
+  <title>장비탑재하중</title>
+</head>
+
+<body>
+  <header >
+    <div id="header"> </div>
+  </header>
+
+  <main>
+    <div id="userID" style="display:none;">heonwoo.lee</div>
+
+    <!--↓ BOX1: 입력 창 ↓---------------------------------------------------------------------->
+    <div class="box1">
+      <div class="box_title">I N P U T</div>
+
+      
+      <!---------↓ 장비재원 선택하기 ↓-------------------------------------------------------------->
+      <h1>· 장비하중</h1>
+
+      <div class="container1">
+
+        <div class="container2">
+          <div class="custom-select">
+            <select id="eQ">
+              <option value="default">장비선택</option>
+              <option value="0">장비 직접입력</option>
+              <option value="1">HX65A(B/H02)</option>
+              <option value="2">HX85A(B/H03)</option>
+              <option value="3">HX150A(B/H06)</option>
+              <option value="4">HX235ACR(B/H08)</option>
+              <option value="5">HX220A(B/H10)</option>
+              <option value="6">HX350A(B/H10)</option>              
+            </select>
+          </div>
+        </div>
+
+
+        <div class="container-hide">
+
+          <div class="container2">
+            <div class="content1">
+              <div class="var1"> 장 비 명: aaaaaaaaaaa</div>
+              <div class="inputValue"><input type="text" id="eqName" value=""/></div>
+            </div>
+            <div class="content2">
+              <div class="var1"> 장비중량 (kN): aaaaaaaaaaaa</div>
+              <div class="inputValue"><input type="number" id="eqWeight" value="240"/></div>
+            </div>
+          </div>
+
+          <div class="container2">
+            <div class="content2">
+              <div class="var1"> 축거리 (mm): aaaaaaaaaaaa</div>
+              <div class="inputValue"><input type="number" id="axDis" value="120"/></div>
+            </div>
+            <div class="content2">
+              <div class="var1"> 전 폭 (mm): aaaaaaaaaaaa</div>
+              <div class="inputValue"><input type="number" id="eqWidth" value="120"/></div>
+            </div>
+          </div>
+
+          <div class="container2">
+            <div class="content2">
+              <div class="var1"> 전 고 (mm): aaaaaaaaaaaa</div>
+              <div class="inputValue"><input type="number" id="eqLength" value="120"/></div>
+            </div>
+
+            <div class="content2">
+              <div class="var1"> 슈 폭 (mm): aaaaaaaaaaaa</div>
+              <div class="inputValue"><input type="number" id="eqContact" value="120"/></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container2">
+          <div class="var1 bold"> 충 격 계 수 aaaaaaaaaaaa</div>
+          <div class="choices">
+            <label class="container">
+                <input type="radio" name="radio" id="impact1"><p> 1.3 (기본) </p>
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <input type="radio" name="radio" id="impact2" style="color: var(--accent-color)"><p> 1.4 (제안)</p>
+                  <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+
+
+      </div>
+      <!---------↑ 장비재원 선택하기 ↑----------------------------------------------------------->
+
+      <!---------↓ 해체 잔재물 입력 ↓-------------------------------------------------------------->
+      <h1>· 해체 잔재물</h1>
+      <div class="container1">
+        
+        <div class="container2">
+          <div class="content2">
+            <div class="var1"> 높 이 (m): aaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="db_Height" value="0.4"/></div>
+          </div>
+          <div class="content2">
+            <div class="var1"> 비 중 (kN/m³): aaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="db_Density" value="22"/></div>
+          </div>
+        </div>
+
+        <div class="container2">
+          <div class="content2">
+            <div class="var1"> 공 극 률: aaaaaaaaaaaa</div>
+              <div class="inputValue"><input type="number" id="db_Porosity" value="0.7"/></div>
+          </div>
+        </div>
+      </div> 
+      <!---------↑ 해체 잔재물 입력 ↑----------------------------------------------------------->
+
+
+      <!---------↓ 슬래브 두께 및 마감 입력 ↓-------------------------------------------------------------->  
+      <h1>· 슬래브 마감</h1>
+
+      <div class="container1">
+        
+        <div class="container4">
+          <div class="content3">
+            <div class="var2"> T H K . aaaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="thk1" value="120"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+          <div class="content3">
+            <div class="var2"></div>
+            <div class="inputValue"><input type="number" id="thk2" value="150"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+          <div class="content3">
+            <div class="var2"></div>
+            <div class="inputValue"><input type="number" id="thk3" value="180"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+          <div class="content3">
+            <div class="var2"></div>
+            <div class="inputValue"><input type="number" id="thk4" value="210"/></div>
+            <div>&nbsp;mm </div>
+          </div>
+        </div>
+
+        <div class="container4">
+          <div class="content3">
+            <div class="var2"> f<sub>ck</sub> = aaaaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="fck" value="21"/></div>
+            <div>&nbsp;kN/m²</div>
+          </div>
+          <div class="content3">
+            <div class="var2"> 몰 탈 aaaaaaaaaaaaaa</div>
+            <div class="inputValue"><input type="number" id="mortar" value="30"/></div>
+            <div>&nbsp;mm</div>
+          </div>
+
+        </div>
+
+
+      </div> 
+      <!---------↑ 슬래브 두께 입력 ↑----------------------------------------------------------->
+        
+
+      <!---------↓ 계산 버튼 ↓-------------------------------------------------------------->  
+      <button class="calculate" id="submit" onclick="inputCheck();"> 
+        <i class="ri-calculator-line"></i>&nbsp;&nbsp;계 산 하 기
+      </button>
+      <!---------↑ 계산 버튼 ↑----------------------------------------------------------->
+
+
+    </div>
+    <!--↑ BOX1: 입력 창 ↑----------------------------------------------------------------------------->
+        
+
+    <!--↓ BOX2  오른쪽 결과 창 ↓---------------------------------------------------------------------->
+    <div class="box2">
+      <div class="box_title">O U T P U T
+      </div>
+
+      <h1>· 국토교통부 "해체계획서 작성가이드" 기준 '설계하중표' </h1>
+
+      <div class="table1" id="table1">
+        <div class="item1"> <span>설계하중표 (장비탑재 공법)</span> </div>
+
+        <div class="item2"> <span>하중종류</span> </div>
+        <div class="item2-1"> <span>하중 상세 내용</span> </div>
+
+        <div class="item3"> <span>장비하중 <br> (활하중)</span></div>
+        <div class="item3-0">
+          <div class="item3-1"> 
+            <div class="item"> <span>장 비 명:</span> </div>
+            <div class="item"> <span id="out_eqName" class="outPut"></span> </div>
+            <div class="item"> <span>장비중량:</span> </div>
+            <div class="item"> <span id="out_eqWeight" class="outPut"></span><span>kN</span> </div>
+          </div>
+          <div class="item3-2"> 
+            <div class="item3-2-1"> <span>장비제원</span> <span>(mm)</span></div>
+            <div class="item3-2-2">
+              <div class="item_nopad"> <span>텀블러 <br> 중심간 거리</span></div>
+              <div class="item"> <span> 전 폭 </span> </div>
+              <div class="item"> <span> 전 고 </span> </div>
+              <div class="item"> <span> 슈 폭 </span> </div>
+              <div class="item"> <span id="out_axDis" class="outPut"></span> </div>
+              <div class="item"> <span id="out_eqWidth" class="outPut"></span> </div>
+              <div class="item"> <span id="out_eqLength" class="outPut"></span> </div>
+              <div class="item"> <span id="out_eqContact" class="outPut"></span> </div>
+            </div>
+          </div>
+          <div class="item3-3"> 
+            <div class="item_nopad"> <span>장비단위하중 <br>(등분포하중)</span> </div>
+            <div class="itemEq">
+              <math>
+                <mrow>
+                  <mi>W</mi><msub><mi></mi><mi>E</mi></msub><msub><mi></mi><mi>W</mi></msub>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mrow>
+                      <mn id="eqWeight_1"></mn><mo>x</mo><msup><mn id="impact_1" class="outPut"></mn><mo>*</mo></msup>
+                    </mrow>
+                    <mrow>
+                      <mn id="axDis_1"></mn><mo>x</mo><mn id="eqWidth_1" class="outPut"></mn>
+                    </mrow>
+                  </mfrac>
+                  <mo>=</mo>
+                  <mn id="wEW"></mn><mi>k</mi><mi>N</mi><mi>/</mi><msup><mi>m</mi><mn>2</mn></msup>
+                </mrow>
+              </math> 
+            <div> <math><mo>*충격계수</mo><mo>=</mo><mn id="impact" class="outPut"> </mn></math> </div> 
+          </div>
+
+
+
+          </div>
+          <div class="item3-4"> 
+            <div class="item_nopad"> <span>장비단위하중 <br>(선하중)</span> </div>
+            <div class="itemEq">        
+              <math>
+                <mrow>
+                  <mi>W</mi><msub><mi></mi><mi>E</mi></msub><msub><mi></mi><mi>I</mi></msub>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mrow>
+                      <mn id="eqWeight_2" class="outPut"></mn><mo>x</mo><msup><mn id="impact_2" class="outPut"></mn><mo>*</mo></msup>
+                    </mrow>
+                    <mrow>
+                      <mn>2</mn><mo>x</mo><mn id="eqContact_2" class="outPut"></mn><mo>x</mo><mn id="axDis_2" class="outPut"></mn>
+                    </mrow>
+                  </mfrac>
+                  <mo>=</mo>
+                  <mn id="wEI"></mn><mi>k</mi><mi>N</mi><mi>/</mi><msup><mi>m</mi><mn>2</mn></msup>
+                </mrow>
+              </math> 
+            
+            </div>
+          </div>
+          <div class="item3-5"> 
+            <div class="item"> <span>하중집중율</span> </div>
+            <div class="item3-5-2">
+              <div class="con_rate">
+                <div> <span id="dis1" class="outPut"></span> </div>
+                <div> <span id="dis2" class="outPut"></span> </div>
+                <div> <span id="dis3" class="outPut"></span> </div>
+                <div> <span id="dis4" class="outPut"></span> </div>
+                <div id="pic"> <span>(장비평면도)</span> </div>
+              </div>
+              <div class="item" style="display:flex; flex-direction:column; gap:0.5em;">
+                <span>접 지 율 =</span>
+                <math>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>2</mn><mo>x</mo><mn id="eqContact_3" class="outPut"></mn><mo>x</mo><mn id="axDis_3" class="outPut"></mn>
+                      </mrow>
+                      <mrow>
+                        <mn id="eqWidth_3" class="outPut"></mn><mo>x</mo><mn id="axDis_4" class="outPut"></mn>
+                      </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mn id="eq_C_3" class="outPut"></mn>
+                  </mrow>
+                </math>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item4"> <span>해체<br>잔재물<br>(활하중)</span> </div>
+        <div class="item4-1">
+          <div class="item"> <span>잔재물 높이<br>(m)</span> </div>
+          <div class="item"> <span>잔재물 비중<br>(kN/㎥)</span> </div>
+          <div class="item_nopad"> <span>공극률<br>(잔재물 밀실도)</span> </div>
+          <div class="item"> <span>단위하중<br>(kN/㎡)</span> </div>      
+          <div class="item"> <span id="out_db_Height" class="outPut"></span> </div>
+          <div class="item"> <span id="out_db_Density" class="outPut"></span> </div>
+          <div class="item"> <span id="out_db_Porosity" class="outPut"></span> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>s</mi></msub> <mo>=</mo><mn id="wS" class="outPut"></mn></math> </div>
+        </div>
+
+        <div class="item5"> <span>해체<br>잔재물 비중<br>(kN/㎥)<span> </div>
+        <div class="item5-1">
+          <div class="item"> <span>일반라멘조 및 콘크리트 벽식구조</span></div>
+          <div class="item"> <span>콘크리트벽식구조와 비내력 조적벽체구조</span></div>            
+          <div class="item"> <span>콘크리트(23) x <span>0.7</span> = <span>16.1</span> <br >몰탈(20) x 0.2 = 4.0<br> 벽돌 및 타일(18) x 0.1 = 1.8 </span></div>
+          <div class="item"> <span>콘크리트(23) x <span>0.6</span> = <span>13.8</span><br>몰탈(20) x 0.2 = 4.0<br> 벽돌 및 타일(18) x 0.2 = 3.6 </span></div>
+          <div class="item"> <span>합계:&nbsp;<span>21.9</span>kN/㎥</span> </div>
+          <div class="item"> <span>합계:&nbsp;<span>21.4</span>kN/㎥</span> </div>
+        </div>
+        <div class="item5-2">
+          <div class="item"> <span>* 순수 콘크리트의 해체 잔재물인 경우는 비중 = 23 을 적용</span> </div>
+        </div>
+
+        <div class="item6"> <span>자 중<br>(고정하중)<br>(kN/㎡)</span> </div>
+        <div class="item6-1">
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk1" class="outPut"></span> </div>
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk2" class="outPut"></span> </div>
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk3" class="outPut"></span> </div>
+          <div class="item"> <span>두께 =&nbsp;</span> <span id="out_thk4" class="outPut"></span> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD1" class="outPut"></mn></math> </div>            
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD2" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD3" class="outPut"></mn></math> </div>
+          <div class="item"> <math><msub><mi>W</mi><mi>D</mi></msub><mo>=</mo><mn id="wD4" class="outPut"></mn></math> </div>
+        </div>
+
+        <div class="item7"> <span>바닥마감<br>(고정하중)</span> </div>
+        <div class="item7-1"> 
+          <div class="item"> <math><msub><mi>W</mi><mi>F</mi></msub><mo>=</mo><mn id="wF"></mn></math><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * 바닥 마감몰탈(T=<span id="out_mortar"></span>)이 남아 있는 경우 적용할 것. </span></div>
+        </div>
+        <div class="item8">
+          <div class="item">
+            <span>
+              주기<br>
+              1. 해체잔재물의 공극율은 잔재물의 종류에 따라 0.7~1.0을 적용한다.<br>
+              2. 바닥 마감하중 현장조사된 마감의 비중과 두께를 고려한다.
+            </span>
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+      
+      <div class="container1">
+          <button class="printtb" onclick="downloadImage()">
+            <span><i class="ri-file-copy-2-line"></i>&nbsp;표 복사하기</span>
+          </button>
+        
+      </div>
+
+
+    </div>
+    <!--------- ↑ ↑------------------------------------------------------------------------------------>
+  
+
+    <!--------↓  삭제할 구간입니다  ↓--------------------------------------->
+  
+    <!-- <div class="box2">
+      <h1>국토교통부 지침서 상 실제표 (비교용) </h1>
+      <img src="images/목표결과페이지.jpg">
+    </div>
+    -->
+          
+    <!----------------↑ 삭제할 구간 입니다. ↑------------------------------>
+
+  </main> 
+  
+
+
+
+  <footer>
+    <a class="footer-text" target="_blank" href="#"><i class="ri-building-3-line"></i>&nbsp;해체공사: 장비탑재 하중</a>
+    <a class="footer-text" target="_blank" href="#">©2022-2024 HE:ON Inc.</a>
+  </footer>  
+
+
+   
+  
+
+  <!-----↓ 입력값 오류 시 경고문 ↓---------------->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modalText"></p>
+    </div></div>
+  <!---- ↑ 입력값 오류 시 경고문 ↑--------------->
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function(){
+    $('#header').load("header.html");
+  }); 
+
+</script>
+
+<script src="js/app01.js"></script>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+</body>
+
+
+</html>
